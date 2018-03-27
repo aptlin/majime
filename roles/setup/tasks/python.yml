@@ -1,0 +1,5 @@
+- name: installing the python environment
+  homebrew:
+    name: "{{item}}"
+    state: latest
+  with_items: ["pyenv", "pyenv-virtualenv", "pyenv-virtualenvwrapper"]

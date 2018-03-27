@@ -1,0 +1,18 @@
+---
+# make sure homebrew is installed, update brew and install applications
+
+- name: tap emacs
+  homebrew_tap:
+    tap: "d12frosted/emacs-plus"
+
+- name: installing the applications via homebrew
+  homebrew:
+    name: "{{item}}"
+    state: latest
+  with_items: "{{applications}}"
+
+- name: start installing homebrew cask applications
+  homebrew_cask:
+    name: "{{item}}"
+    state: installed
+  with_items: "{{cask_applications}}"

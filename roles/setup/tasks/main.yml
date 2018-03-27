@@ -1,0 +1,17 @@
+- name: homebrew install
+  include: homebrew.yml
+
+- name: application installs
+  include: apps.yml
+
+- name: configuration
+  include: configuration.yml
+
+- name: dotfiles
+  include: dotfiles.yml
+
+- name: R setup
+  include: rlang.yml
+
+- name: Python setup
+  include: python.yml
